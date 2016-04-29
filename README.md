@@ -9,6 +9,7 @@ Virtual box : https://www.virtualbox.org/wiki/Downloads
 Vagrant : https://www.vagrantup.com/downloads.html
 
 <b>Procédure</b>
+Info: L'image Ubuntu utilisée fait 1,8 Go
 
 git clone https://github.com/obees/reactive-platform.git
 
