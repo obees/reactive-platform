@@ -19,13 +19,13 @@ vagrant up
 
 
 <b>Contenu de la dev box</b>
-Install openjdk 8
-Install scala
-Install docker 
-Install pip
-Install Cassandra-driver for python
-Install Lightbend activator
-Install Idea Intellij
+</br>Install openjdk 8
+</br>Install scala
+</br>Install docker 
+</br>Install pip
+</br>Install Cassandra-driver for python
+</br>Install Lightbend activator
+</br>Install Idea Intellij
 
 
 <b>Pour configurer Intellij</b>
