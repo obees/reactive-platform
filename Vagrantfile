@@ -12,8 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  # config.vm.box = "ubuntu_15_10_desktop"
-  config.vm.box = "obees/devbox.ubuntu.15.10"
+  config.vm.box = "ubuntu_15_10_desktop"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -62,44 +61,12 @@ Vagrant.configure(2) do |config|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
 
+  #Bootstrap configuration
+  config.vm.provision :shell, path: "bootstrap.sh"
+
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  config.vm.provision "shell", inline: <<-SHELL
-    
-    sudo apt-get update
-    sudo apt-get install -y openjdk-8-jdk
-    # sudo mkdir /opt/idea
-    
-    command -v idea >/dev/null 2>&1 || { echo >&2 "I require foo but it's not installed.  Aborting."; 
-	sudo wget -O /opt/idea/ideaIC-2016.1.1.tar.gz http://download.jetbrains.com/idea/ideaIC-2016.1.1.tar.gz;
-	sudo tar xfz /opt/idea/ideaIC-2016.1.1.tar.gz;
-	cd idea-IC-145.597.3/bin;
-	sudo ./idea.sh;
-    }
-    
-    sudo apt-get install -y docker.io
-    sudo apt-get install -y scala
-
-    command -v /opt/activator-dist-1.3.9/bin/activator >/dev/null 2>&1 || { echo >&2 "I require foo but it's not installed.  Aborting."; 
-    cd /opt;
-	sudo wget https://downloads.typesafe.com/typesafe-activator/1.3.9/typesafe-activator-1.3.9.zip;
-	sudo unzip typesafe-activator-1.3.9.zip;
-	cd /opt/activator-dist-1.3.9/bin;
-	#export PATH=$PATH:/opt/activator-dist-1.3.9/bin;
-	sudo echo 'export PATH=$PATH:/opt/activator-dist-1.3.9/bin' > /etc/profile.d/lightbend.sh
-	source ~/.bashrc;
-	sudo chmod a+x activator;
-	cd /opt/activator-dist-1.3.9;
-	sudo chgrp -hR vagrant bin;
-	sudo chmod 775 bin;
-	##./activator
-	}
-
-	echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
-	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
-	sudo apt-get update
-	sudo apt-get install -y sbt
-	
-	SHELL
+  # config.vm.provision "shell", inline: <<-SHELL
+    # SHELL
 end

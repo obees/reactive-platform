@@ -17,5 +17,8 @@ cd reactive-platform
 
 vagrant up
 
+<b>Pour configurer Intellij</b>
+sudo /opt/idea/idea-IC-145.597.3/bin/idea.sh
+
 
 Et voilà!
