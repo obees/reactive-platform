@@ -17,6 +17,17 @@ cd reactive-platform
 
 vagrant up
 
+
+<b>Contenu de la dev box</b>
+Install openjdk 8
+Install scala
+Install docker 
+Install pip
+Install Cassandra-driver for python
+Install Lightbend activator
+Install Idea Intellij
+
+
 <b>Pour configurer Intellij</b>
 sudo /opt/idea/idea-IC-145.597.3/bin/idea.sh
 
