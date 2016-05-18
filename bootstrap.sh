@@ -25,6 +25,9 @@ sudo apt-get install -y python-pip
 # Install Cassandra-driver
 pip install cassandra-driver
 
+# Install sublime 3
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 && sudo apt-get update && sudo apt-get install sublime-text-installer
+
 # Install sbt
   #echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
   #sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
